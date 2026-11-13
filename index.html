@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibi Lacoste — Artista Visual | Portfolio & Obras</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#FBF9F5',
+            canvasSubtle: '#F4F1EA',
+            canvasBorder: '#E6E2D8',
+            ink: '#1A1918',
+            inkMuted: '#686560',
+            terracotta: '#A75D43',
+            ochre: '#C1983C'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      background-color: #FBF9F5;
+      color: #1A1918;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif-title {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: -0.01em;
+    }
+    .art-card:hover .art-image {
+      transform: scale(1.025);
+    }
+    .modal-backdrop {
+      background: rgba(26, 25, 24, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    /* Subtle grain background texture */
+    .bg-grain {
+      background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-grain min-h-screen flex flex-col selection:bg-terracotta selection:text-white">
+
+  <!-- TOP UTILITY / SHIPPING BAR -->
+  <div class="border-b border-canvasBorder text-[11px] tracking-widest text-inkMuted py-2 px-6 text-center uppercase font-medium bg-canvasSubtle/60">
+    Buenos Aires, Argentina &nbsp;•&nbsp; Obras originales &nbsp;•&nbsp; Envíos nacionales e internacionales
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-canvas/90 backdrop-blur-md border-b border-canvasBorder/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Brand -->
+      <a href="#home" class="flex flex-col">
+        <span class="font-serif-title text-2xl lg:text-3xl tracking-wide font-normal text-ink">BIBI LACOSTE</span>
+        <span class="text-[10px] tracking-[0.25em] text-inkMuted uppercase -mt-1 font-medium">Artista Visual</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-10 text-[12px] tracking-[0.18em] uppercase font-medium text-ink/80">
+        <a href="#obras" class="hover:text-terracotta transition-colors">Obras</a>
+        <a href="#disponibles" class="hover:text-terracotta transition-colors flex items-center gap-1.5">
+          Disponibles
+          <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+        </a>
+        <a href="#statement" class="hover:text-terracotta transition-colors">Sobre la Artista</a>
+        <a href="#contacto" class="hover:text-terracotta transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Action -->
+      <div class="hidden sm:flex items-center">
+        <a href="#contacto" class="text-[11px] tracking-[0.2em] uppercase font-medium border border-ink/30 px-5 py-2 hover:border-terracotta hover:bg-terracotta hover:text-white transition-all duration-300">
+          Consultar Adquisición
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow">
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-24 lg:pt-20 lg:pb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Text & Curatorial Note -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="inline-block text-[11px] tracking-[0.3em] uppercase text-terracotta font-medium bg-terracotta/5 px-3 py-1 border border-terracotta/20">
+            Catálogo Reciente — Serie 2025
+          </div>
+          <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-light text-ink leading-[1.08]">
+            La tensión entre la estructura y el gesto intuitivo.
+          </h1>
+          <p class="text-inkMuted text-[14px] sm:text-[15px] leading-relaxed font-light pr-4">
+            Arte abstracto, técnica mixta y collage. Un cuerpo de obra donde la materia se construye por capas superpuestas, recortes de memoria visual y grafismos que dialogan entre el orden y la espontaneidad.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a href="#disponibles" class="bg-ink text-canvas text-[11px] tracking-[0.2em] uppercase px-7 py-3.5 hover:bg-terracotta transition-colors font-medium">
+              Ver Obras Disponibles
+            </a>
+            <a href="#obras" class="border border-canvasBorder text-ink text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 hover:border-ink transition-colors font-medium">
+              Explorar Catálogo
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="pt-8 border-t border-canvasBorder/80 grid grid-cols-3 gap-6 text-left">
+            <div>
+              <span class="block font-serif text-2xl text-ink font-normal">2025</span>
+              <span class="text-[10px] tracking-wider text-inkMuted uppercase">Colección actual</span>
+            </div>
+            <div>
+              <span class="block font-serif text-2xl text-ink font-normal">15+</span>
+              <span class="text-[10px] tracking-wider text-inkMuted uppercase">Piezas originales</span>
+            </div>
+            <div>
+              <span class="block font-serif text-2xl text-ink font-normal">Global</span>
+              <span class="text-[10px] tracking-wider text-inkMuted uppercase">Envíos con seguro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Featured Artwork Hero -->
+        <div class="lg:col-span-7">
+          <div class="relative bg-canvasSubtle p-4 sm:p-8 border border-canvasBorder shadow-sm">
+            <div class="relative overflow-hidden cursor-pointer group" onclick="openModal('art-1')">
+              <img src="assets/artworks/solapado_1.webp" alt="Solapado — Bibi Lacoste" class="w-full h-auto max-h-[640px] object-contain mx-auto transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-ink/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="bg-canvas/95 text-ink text-[11px] tracking-[0.2em] uppercase px-5 py-2.5 font-medium shadow-md">
+                  Inspeccionar Detalle & Escala
+                </span>
+              </div>
+            </div>
+            <div class="mt-5 flex justify-between items-baseline pt-4 border-t border-canvasBorder/60">
+              <div>
+                <h3 class="font-serif-title text-2xl text-ink">Solapado</h3>
+                <p class="text-[12px] text-inkMuted tracking-wide font-light">Acrílico sobre soporte &nbsp;•&nbsp; 70 × 50 cm &nbsp;•&nbsp; 2025</p>
+              </div>
+              <span class="text-[11px] tracking-wider uppercase text-terracotta font-medium bg-terracotta/10 px-2.5 py-1">
+                Disponible
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: WORKS / CATÁLOGO -->
+    <section id="obras" class="max-w-7xl mx-auto px-6 lg:px-12 py-20 border-t border-canvasBorder">
+      
+      <!-- Section Header & Filter Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div>
+          <span class="text-[11px] tracking-[0.3em] uppercase text-terracotta font-medium">Catálogo de Colección</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl text-ink font-light mt-1">Obras Seleccionadas</h2>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-2 text-[11px] tracking-[0.15em] uppercase font-medium">
+          <button onclick="filterWorks('all')" class="filter-btn active px-4 py-2 border border-ink bg-ink text-white transition-all" data-filter="all">Todas (15)</button>
+          <button onclick="filterWorks('available')" class="filter-btn px-4 py-2 border border-canvasBorder bg-canvas text-ink hover:border-ink transition-all" data-filter="available">Disponibles (12)</button>
+          <button onclick="filterWorks('mixta')" class="filter-btn px-4 py-2 border border-canvasBorder bg-canvas text-ink hover:border-ink transition-all" data-filter="mixta">Técnica Mixta</button>
+          <button onclick="filterWorks('acrilico')" class="filter-btn px-4 py-2 border border-canvasBorder bg-canvas text-ink hover:border-ink transition-all" data-filter="acrilico">Acrílicos</button>
+        </div>
+      </div>
+
+      <!-- Artwork Grid -->
+      <div id="art-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+        <!-- Rendered dynamically via JS for full interactivity -->
+      </div>
+    </section>
+
+    <!-- SECTION: IN SITU / ROOM SCALE PREVIEW BANNER -->
+    <section class="bg-canvasSubtle py-20 border-y border-canvasBorder">
+      <div class="max-w-5xl mx-auto px-6 text-center space-y-6">
+        <span class="text-[11px] tracking-[0.3em] uppercase text-terracotta font-medium">Experiencia para Coleccionistas</span>
+        <h2 class="font-serif-title text-3xl sm:text-4xl text-ink font-light max-w-2xl mx-auto">
+          Apreciar la escala y la materialidad antes de incorporar la obra a tu espacio.
+        </h2>
+        <p class="text-inkMuted text-[14px] max-w-xl mx-auto font-light leading-relaxed">
+          Cada pieza está catalogada con sus dimensiones exactas y registro en alta resolución. Abrí cualquier obra para simular su presencia colgada en sala o examinar los detalles del collage con lupa.
+        </p>
+        <div class="pt-4">
+          <button onclick="openModal('art-8')" class="inline-block bg-ink text-canvas text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 hover:bg-terracotta transition-colors font-medium">
+            Probar simulador con "Araucaria" (70×50 cm)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: STATEMENT & ABOUT -->
+    <section id="statement" class="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-[11px] tracking-[0.3em] uppercase text-terracotta font-medium">Biografía & Práctica Artística</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl text-ink font-light">
+            Bibi Lacoste
+          </h2>
+          <div class="space-y-4 text-inkMuted text-[14px] font-light leading-relaxed">
+            <p>
+              Desarrolla su producción artística desde la Ciudad de Buenos Aires, explorando las posibilidades de la abstracción lírica, el collage matérico y la superposición de planos.
+            </p>
+            <p>
+              Su práctica surge del diálogo espontáneo con el soporte: capas de acrílico denso, raspados, marcas caligráficas con marcador y fragmentos de papel impreso que intervienen la composición como fósiles urbanos o recuerdos deconstructivos.
+            </p>
+            <p>
+              Las obras de formato medio (70×50 cm y 50×35 cm) proponen un vínculo de intimidad y contemplación táctil, concebidas para habitar espacios contemporáneos y colecciones que valoran la fuerza del gesto manual.
+            </p>
+          </div>
+
+          <div class="pt-4 flex items-center space-x-6">
+            <a href="https://www.instagram.com/lacoste_bi/" target="_blank" class="text-[12px] tracking-wider text-ink hover:text-terracotta font-medium underline underline-offset-4">
+              Instagram @lacoste_bi →
+            </a>
+            <a href="mailto:lacostebibiana08@gmail.com" class="text-[12px] tracking-wider text-ink hover:text-terracotta font-medium underline underline-offset-4">
+              lacostebibiana08@gmail.com →
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+          <div class="p-3 bg-white border border-canvasBorder shadow-sm">
+            <img src="assets/artworks/aquiles_11.webp" alt="Aquiles — Detalle" class="w-full h-80 object-cover">
+            <span class="block mt-2 text-[10px] tracking-widest text-inkMuted uppercase text-center font-medium">Aquiles (Detalle de collage)</span>
+          </div>
+          <div class="p-3 bg-white border border-canvasBorder shadow-sm mt-8">
+            <img src="assets/artworks/verano_4.webp" alt="Verano — Gesto y color" class="w-full h-80 object-cover">
+            <span class="block mt-2 text-[10px] tracking-widest text-inkMuted uppercase text-center font-medium">Verano (Energía gestual)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: CONTACT & INQUIRY -->
+    <section id="contacto" class="max-w-4xl mx-auto px-6 py-24 border-t border-canvasBorder">
+      <div class="text-center space-y-4 mb-12">
+        <span class="text-[11px] tracking-[0.3em] uppercase text-terracotta font-medium">Adquisición & Colaboraciones</span>
+        <h2 class="font-serif-title text-3xl sm:text-4xl text-ink font-light">Consultar por una Obra</h2>
+        <p class="text-inkMuted text-[14px] max-w-lg mx-auto font-light">
+          Todas las obras originales se entregan firmadas y con certificado de autenticidad. Envíos nacionales en Argentina y embalaje profesional para transporte internacional.
+        </p>
+      </div>
+
+      <form onsubmit="handleInquirySubmit(event)" class="space-y-6 bg-white p-8 sm:p-12 border border-canvasBorder shadow-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-[11px] tracking-[0.15em] uppercase text-inkMuted mb-2 font-medium">Nombre completo</label>
+            <input type="text" required placeholder="Tu nombre" class="w-full border border-canvasBorder px-4 py-3 text-[14px] focus:outline-none focus:border-ink bg-canvas/30">
+          </div>
+          <div>
+            <label class="block text-[11px] tracking-[0.15em] uppercase text-inkMuted mb-2 font-medium">Correo electrónico</label>
+            <input type="email" required placeholder="tu@email.com" class="w-full border border-canvasBorder px-4 py-3 text-[14px] focus:outline-none focus:border-ink bg-canvas/30">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-[11px] tracking-[0.15em] uppercase text-inkMuted mb-2 font-medium">Obra de interés</label>
+            <select id="inquiry-artwork-select" class="w-full border border-canvasBorder px-4 py-3 text-[14px] focus:outline-none focus:border-ink bg-canvas/30">
+              <option value="">Seleccionar una obra (o consulta general)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[11px] tracking-[0.15em] uppercase text-inkMuted mb-2 font-medium">Destino de envío</label>
+            <input type="text" placeholder="Ciudad, País (ej. Buenos Aires, Madrid, Miami)" class="w-full border border-canvasBorder px-4 py-3 text-[14px] focus:outline-none focus:border-ink bg-canvas/30">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] tracking-[0.15em] uppercase text-inkMuted mb-2 font-medium">Mensaje o consulta</label>
+          <textarea rows="4" placeholder="Contanos tu consulta sobre la obra, consultas para interiorismo o presupuestos..." class="w-full border border-canvasBorder px-4 py-3 text-[14px] focus:outline-none focus:border-ink bg-canvas/30"></textarea>
+        </div>
+
+        <div class="text-center pt-2">
+          <button type="submit" class="bg-ink text-white text-[11px] tracking-[0.25em] uppercase px-10 py-4 hover:bg-terracotta transition-colors font-medium">
+            Enviar Consulta de Adquisición
+          </button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-canvasBorder py-12 px-6 lg:px-12 bg-canvasSubtle text-[12px] text-inkMuted">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <span class="font-serif-title text-xl text-ink font-normal">BIBI LACOSTE</span>
+        <p class="text-[11px] tracking-wider text-inkMuted mt-1">© 2026 Todos los derechos reservados sobre las obras.</p>
+      </div>
+
+      <div class="flex items-center space-x-8 text-[11px] tracking-widest uppercase font-medium">
+        <a href="#home" class="hover:text-ink">Inicio</a>
+        <a href="#obras" class="hover:text-ink">Catálogo</a>
+        <a href="#statement" class="hover:text-ink">Declaración</a>
+        <a href="#contacto" class="hover:text-ink">Adquisición</a>
+      </div>
+
+      <div class="text-[11px] tracking-wide">
+        Buenos Aires, Argentina &nbsp;•&nbsp; Estudio de Arte Visual
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARTWORK INSPECTOR MODAL -->
+  <div id="art-modal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4 sm:p-6 lg:p-10">
+    <div class="bg-canvas w-full max-w-5xl max-h-[92vh] flex flex-col overflow-hidden border border-canvasBorder shadow-2xl relative">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-canvasBorder flex items-center justify-between bg-canvasSubtle/70">
+        <div>
+          <span id="modal-category" class="text-[10px] tracking-[0.25em] text-terracotta uppercase font-medium">Serie 2025</span>
+          <h3 id="modal-title" class="font-serif-title text-2xl text-ink font-normal leading-tight">Título de la Obra</h3>
+        </div>
+        <button onclick="closeModal()" class="text-inkMuted hover:text-ink p-2 text-2xl leading-none" title="Cerrar">&times;</button>
+      </div>
+
+      <!-- Modal Body (Two columns) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 flex-grow overflow-y-auto">
+        
+        <!-- Left: Image Viewer with Modes -->
+        <div class="lg:col-span-7 bg-[#EFECE6] p-6 sm:p-8 flex flex-col items-center justify-center relative min-h-[380px]">
+          <!-- Mode Tabs -->
+          <div class="absolute top-4 left-4 z-10 flex bg-white/90 backdrop-blur border border-canvasBorder text-[10px] tracking-widest uppercase font-medium">
+            <button onclick="setModalViewMode('full')" id="tab-full" class="px-3 py-1.5 bg-ink text-white">Obra</button>
+            <button onclick="setModalViewMode('detail')" id="tab-detail" class="px-3 py-1.5 text-ink hover:text-terracotta">Textura / Zoom</button>
+            <button onclick="setModalViewMode('room')" id="tab-room" class="px-3 py-1.5 text-ink hover:text-terracotta">En el espacio</button>
+          </div>
+
+          <!-- The Artwork in view -->
+          <div id="view-container" class="w-full h-full flex items-center justify-center transition-all duration-500">
+            <img id="modal-img" src="" alt="Obra" class="max-h-[500px] w-auto object-contain shadow-md transition-all duration-500">
+          </div>
+          
+          <div id="view-caption" class="text-[10px] tracking-wider text-inkMuted mt-4 uppercase">
+            Vista completa de la pieza
+          </div>
+        </div>
+
+        <!-- Right: Technical Details & Inquiry Action -->
+        <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-6">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-canvasBorder">
+              <span class="text-[11px] tracking-widest text-inkMuted uppercase">Disponibilidad</span>
+              <span id="modal-status" class="text-[11px] tracking-widest uppercase px-3 py-1 font-medium bg-terracotta/10 text-terracotta">Disponible</span>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <span class="block text-[10px] tracking-widest text-inkMuted uppercase font-medium">Técnica y Materiales</span>
+                <span id="modal-technique" class="text-[14px] text-ink font-light">Técnica mixta sobre soporte</span>
+              </div>
+              <div>
+                <span class="block text-[10px] tracking-widest text-inkMuted uppercase font-medium">Dimensiones</span>
+                <span id="modal-dimensions" class="text-[14px] text-ink font-light">70 × 50 cm</span>
+              </div>
+              <div>
+                <span class="block text-[10px] tracking-widest text-inkMuted uppercase font-medium">Año de creación</span>
+                <span id="modal-year" class="text-[14px] text-ink font-light">2025</span>
+              </div>
+              <div>
+                <span class="block text-[10px] tracking-widest text-inkMuted uppercase font-medium">Autenticidad & Montaje</span>
+                <p class="text-[13px] text-inkMuted font-light leading-relaxed mt-1">
+                  Pieza única original. Firmada por la artista al dorso. Incluye certificado de autenticidad sellado. Lista para enmarcar.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 bg-canvasSubtle border border-canvasBorder text-[12px] text-inkMuted space-y-1">
+              <span class="block font-medium text-ink text-[11px] tracking-wider uppercase">Logística & Envíos</span>
+              <p class="font-light">Embalaje reforzado de protección para obras de arte. Envíos con seguro a todo el país y al exterior.</p>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-canvasBorder space-y-3">
+            <button id="modal-inquire-btn" onclick="inquireThisArtwork()" class="w-full bg-ink text-white text-[11px] tracking-[0.2em] uppercase py-3.5 hover:bg-terracotta transition-colors font-medium">
+              Consultar Adquisición de esta Obra
+            </button>
+            <a href="https://wa.me/?text=Hola%20Bibi,%20me%20interesa%20consultar%20por%20tu%20obra" target="_blank" class="block text-center text-[11px] tracking-wider uppercase text-inkMuted hover:text-ink font-medium">
+              O consultar directamente por WhatsApp →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT: ARTWORKS DATA & INTERACTIONS -->
+  <script>
+    const artworks = [
+      {
+        id: "art-1",
+        title: "Solapado",
+        technique: "Acrílico",
+        dimensions: "70 × 50 cm",
+        year: "2025",
+        image: "assets/artworks/solapado_1.webp",
+        available: true,
+        category: "acrilico"
+      },
+      {
+        id: "art-2",
+        title: "Maracuyá",
+        technique: "Acrílico",
+        dimensions: "70 × 50 cm",
+        year: "2025",
+        image: "assets/artworks/maracuy__2.webp",
+        available: true,
+        category: "acrilico"
+      },
+      {
+        id: "art-3",
+        title: "Cancelado",
+        technique: "Técnica mixta y collage",
+        dimensions: "70 × 50 cm",
+        year: "2025",
+        image: "assets/artworks/cancelado_3.webp",
+        available: false,
+        category: "mixta"
+      },
+      {
+        id: "art-4",
+        title: "Verano",
+        technique: "Acrílico",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/verano_4.webp",
+        available: true,
+        category: "acrilico"
+      },
+      {
+        id: "art-5",
+        title: "Otoño",
+        technique: "Acrílico",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/oto_o_5.webp",
+        available: true,
+        category: "acrilico"
+      },
+      {
+        id: "art-6",
+        title: "Chocolat d´Or",
+        technique: "Técnica mixta",
+        dimensions: "40 × 30 cm",
+        year: "2025",
+        image: "assets/artworks/chocolat_d_or_6.webp",
+        available: false,
+        category: "mixta"
+      },
+      {
+        id: "art-7",
+        title: "El Inicio",
+        technique: "Técnica mixta",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/el_inicio_7.webp",
+        available: true,
+        category: "mixta"
+      },
+      {
+        id: "art-8",
+        title: "Araucaria",
+        technique: "Técnica mixta y collage",
+        dimensions: "70 × 50 cm",
+        year: "2025",
+        image: "assets/artworks/araucaria_8.webp",
+        available: true,
+        category: "mixta"
+      },
+      {
+        id: "art-9",
+        title: "Sobriedad",
+        technique: "Técnica mixta",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/sobriedad_9.webp",
+        available: true,
+        category: "mixta"
+      },
+      {
+        id: "art-10",
+        title: "Reunidos",
+        technique: "Acrílico",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/reunidos_10.webp",
+        available: true,
+        category: "acrilico"
+      },
+      {
+        id: "art-11",
+        title: "Aquiles",
+        technique: "Técnica mixta y collage",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/aquiles_11.webp",
+        available: true,
+        category: "mixta"
+      },
+      {
+        id: "art-12",
+        title: "Disgregado",
+        technique: "Técnica mixta",
+        dimensions: "70 × 50 cm",
+        year: "2025",
+        image: "assets/artworks/disgregado_12.webp",
+        available: false,
+        category: "mixta"
+      },
+      {
+        id: "art-13",
+        title: "San Colombano",
+        technique: "Técnica mixta",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/san_colombano_13.webp",
+        available: true,
+        category: "mixta"
+      },
+      {
+        id: "art-14",
+        title: "Sueños",
+        technique: "Técnica mixta",
+        dimensions: "50 × 35 cm",
+        year: "2025",
+        image: "assets/artworks/sue_os_14.webp",
+        available: true,
+        category: "mixta"
+      },
+      {
+        id: "art-15",
+        title: "Virapitá",
+        technique: "Técnica mixta",
+        dimensions: "50 × 34,5 cm",
+        year: "2025",
+        image: "assets/artworks/virapit__15.webp",
+        available: true,
+        category: "mixta"
+      }
+    ];
+
+    let currentSelectedArtwork = null;
+
+    // Render Grid
+    function renderArtGrid(filtered) {
+      const grid = document.getElementById('art-grid');
+      grid.innerHTML = '';
+
+      filtered.forEach(art => {
+        const card = document.createElement('div');
+        card.className = "art-card group cursor-pointer flex flex-col justify-between";
+        card.onclick = () => openModal(art.id);
+
+        card.innerHTML = `
+          <div class="relative bg-canvasSubtle p-4 sm:p-6 border border-canvasBorder overflow-hidden">
+            <div class="overflow-hidden aspect-[3/4] flex items-center justify-center">
+              <img src="${art.image}" alt="${art.title}" class="art-image w-full h-full object-contain transition-transform duration-500">
+            </div>
+            
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+              <span class="bg-canvas/95 text-ink text-[10px] tracking-[0.2em] uppercase px-4 py-2 font-medium shadow">
+                Ver Detalles & Escala
+              </span>
+            </div>
+
+            <!-- Status Pill -->
+            <div class="absolute top-4 right-4">
+              ${art.available 
+                ? '<span class="text-[9px] tracking-widest uppercase bg-canvas/90 text-terracotta px-2 py-0.5 font-medium border border-terracotta/30">Disponible</span>' 
+                : '<span class="text-[9px] tracking-widest uppercase bg-canvas/90 text-inkMuted px-2 py-0.5 font-medium border border-canvasBorder">Colección Privada</span>'}
+            </div>
+          </div>
+
+          <div class="mt-4 flex justify-between items-baseline">
+            <div>
+              <h4 class="font-serif-title text-xl text-ink group-hover:text-terracotta transition-colors">${art.title}</h4>
+              <p class="text-[12px] text-inkMuted font-light tracking-wide">${art.technique} &nbsp;•&nbsp; ${art.dimensions}</p>
+            </div>
+            <span class="text-[11px] font-serif text-inkMuted">${art.year}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter Logic
+    function filterWorks(filter) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === filter) {
+          btn.className = "filter-btn active px-4 py-2 border border-ink bg-ink text-white transition-all";
+        } else {
+          btn.className = "filter-btn px-4 py-2 border border-canvasBorder bg-canvas text-ink hover:border-ink transition-all";
+        }
+      });
+
+      let result = artworks;
+      if (filter === 'available') {
+        result = artworks.filter(a => a.available);
+      } else if (filter === 'acrilico') {
+        result = artworks.filter(a => a.category === 'acrilico');
+      } else if (filter === 'mixta') {
+        result = artworks.filter(a => a.category === 'mixta');
+      }
+
+      renderArtGrid(result);
+    }
+
+    // Modal Operations
+    function openModal(id) {
+      const art = artworks.find(a => a.id === id);
+      if (!art) return;
+      currentSelectedArtwork = art;
+
+      document.getElementById('modal-title').textContent = art.title;
+      document.getElementById('modal-technique').textContent = art.technique;
+      document.getElementById('modal-dimensions').textContent = art.dimensions;
+      document.getElementById('modal-year').textContent = art.year;
+      document.getElementById('modal-img').src = art.image;
+
+      const statusEl = document.getElementById('modal-status');
+      if (art.available) {
+        statusEl.textContent = 'Disponible para adquisición';
+        statusEl.className = 'text-[11px] tracking-widest uppercase px-3 py-1 font-medium bg-terracotta/10 text-terracotta border border-terracotta/20';
+        document.getElementById('modal-inquire-btn').style.display = 'block';
+      } else {
+        statusEl.textContent = 'Colección Privada (No disponible)';
+        statusEl.className = 'text-[11px] tracking-widest uppercase px-3 py-1 font-medium bg-canvasBorder text-inkMuted';
+        document.getElementById('modal-inquire-btn').style.display = 'none';
+      }
+
+      setModalViewMode('full');
+      document.getElementById('art-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('art-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function setModalViewMode(mode) {
+      const img = document.getElementById('modal-img');
+      const container = document.getElementById('view-container');
+      const caption = document.getElementById('view-caption');
+
+      // Update button styles
+      ['full', 'detail', 'room'].forEach(m => {
+        const btn = document.getElementById(`tab-${m}`);
+        if (m === mode) {
+          btn.className = "px-3 py-1.5 bg-ink text-white";
+        } else {
+          btn.className = "px-3 py-1.5 text-ink hover:text-terracotta";
+        }
+      });
+
+      if (mode === 'full') {
+        container.style.backgroundColor = '#EFECE6';
+        container.style.backgroundImage = 'none';
+        container.style.padding = '0';
+        img.style.transform = 'scale(1)';
+        img.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.15)';
+        caption.textContent = 'Vista completa de la pieza sobre soporte neutro';
+      } else if (mode === 'detail') {
+        container.style.backgroundColor = '#EFECE6';
+        container.style.backgroundImage = 'none';
+        container.style.padding = '0';
+        img.style.transform = 'scale(2.1)';
+        img.style.boxShadow = 'none';
+        caption.textContent = 'Detalle de materia: texturas de espátula, collage y grafismos';
+      } else if (mode === 'room') {
+        // Room Scale simulation
+        container.style.backgroundColor = '#E4E0D8';
+        container.style.backgroundImage = 'linear-gradient(to bottom, #ded9cf 0%, #ece8e1 100%)';
+        container.style.padding = '40px';
+        img.style.transform = 'scale(0.65)';
+        img.style.boxShadow = '0 25px 40px -10px rgba(0, 0, 0, 0.35)';
+        caption.textContent = 'Simulación de escala en pared de sala de estar contemporánea';
+      }
+    }
+
+    function inquireThisArtwork() {
+      if (!currentSelectedArtwork) return;
+      closeModal();
+      
+      const select = document.getElementById('inquiry-artwork-select');
+      select.value = currentSelectedArtwork.id;
+      
+      window.location.hash = 'contacto';
+    }
+
+    function populateInquirySelect() {
+      const select = document.getElementById('inquiry-artwork-select');
+      artworks.forEach(art => {
+        const opt = document.createElement('option');
+        opt.value = art.id;
+        opt.textContent = `${art.title} (${art.dimensions}) — ${art.available ? 'Disponible' : 'Colección Privada'}`;
+        select.appendChild(opt);
+      });
+    }
+
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      alert('¡Gracias por tu interés! Este es un prototipo interactivo para Bibi Lacoste. La consulta quedaría registrada o enviada por email/WhatsApp al estudio de la artista.');
+    }
+
+    // Close modal on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Close modal on background click
+    document.getElementById('art-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'art-modal') closeModal();
+    });
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      renderArtGrid(artworks);
+      populateInquirySelect();
+    });
+  </script>
+</body>
+</html>
